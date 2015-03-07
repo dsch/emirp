@@ -35,13 +35,9 @@ int is_emirp(unsigned int number)
           is_prime(number) &&
           is_prime(reversed);
 #else // ca 10%-15% faster
-  if (!is_prime(number))
-  {
-    return 0;
-  }
-
-  unsigned int reversed = revers_digits(number);
-  return (number != reversed) &&
+  unsigned int reversed;
+  return is_prime(number) &&
+          (number != (reversed = revers_digits(number))) &&
           is_prime(reversed);
 
 #endif
