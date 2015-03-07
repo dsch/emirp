@@ -35,15 +35,19 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath>../build/emirp_test</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../build</pElem>
+            </incDir>
+          </cTool>
         </makeTool>
       </makefileType>
       <item path="../emirp.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+        </cTool>
       </item>
       <item path="../emirp_test.c" ex="false" tool="0" flavor2="0">
         <cTool flags="0">
-          <incDir>
-            <pElem>../build</pElem>
-          </incDir>
         </cTool>
       </item>
     </conf>
