@@ -60,9 +60,51 @@ int main()
 
   CU_pSuite is_prime_suite = CU_add_suite("is_prime", NULL, NULL);
 
-  CU_add_test(is_prime_suite, "one is not prime", ({void test()
+  CU_add_test(is_prime_suite, "zero is not prime", ({void test()
+    {
+              CU_ASSERT_FALSE(is_prime(0));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "one is not prime", ({void test()
     {
               CU_ASSERT_FALSE(is_prime(1));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "two is prime", ({void test()
+    {
+              CU_ASSERT_TRUE(is_prime(2));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "three is prime", ({void test()
+    {
+              CU_ASSERT_TRUE(is_prime(3));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "four is not prime", ({void test()
+    {
+              CU_ASSERT_FALSE(is_prime(4));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "five is prime", ({void test()
+    {
+              CU_ASSERT_TRUE(is_prime(5));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "six is not prime", ({void test()
+    {
+              CU_ASSERT_FALSE(is_prime(6));
+    }
+    test;}));
+
+    CU_add_test(is_prime_suite, "seven is prime", ({void test()
+    {
+              CU_ASSERT_TRUE(is_prime(7));
     }
     test;}));
 

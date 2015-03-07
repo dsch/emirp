@@ -16,5 +16,13 @@ unsigned int revers_digits(unsigned int number)
 
 int is_prime(unsigned int number)
 {
-  return number < 2;
+  unsigned i;
+  for (i = 2; i < number; ++i)
+  {
+    if ((number % i) == 0)
+    {
+      return 0;
+    }
+  }
+  return number > 1;
 }
