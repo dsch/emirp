@@ -108,6 +108,15 @@ int main()
     }
     test;}));
 
+  CU_pSuite is_emirp_suite = CU_add_suite("is_emirp", NULL, NULL);
+
+  CU_add_test(is_emirp_suite, "one digit number is not emirp", ({void test()
+    {
+              CU_ASSERT_FALSE(is_emirp(one_digit_number));
+    }
+    test;}));
+
+
   CU_ErrorCode error_code = CU_basic_run_tests();
   CU_cleanup_registry();
 

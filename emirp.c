@@ -26,3 +26,11 @@ int is_prime(unsigned int number)
   }
   return number > 1;
 }
+
+int is_emirp(unsigned int number)
+{
+  unsigned int reversed = revers_digits(number);
+  return (number != reversed) &&
+          is_prime(number) &&
+          is_prime(reversed);
+}
