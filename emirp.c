@@ -16,8 +16,8 @@ unsigned int revers_digits(unsigned int number)
 
 int is_prime(unsigned int number)
 {
-  unsigned i;
-  for (i = 2; i < number; ++i)
+  unsigned int i;
+  for (i = 2; i * i <= number; ++i)
   {
     if ((number % i) == 0)
     {
@@ -29,8 +29,20 @@ int is_prime(unsigned int number)
 
 int is_emirp(unsigned int number)
 {
+#if 1
   unsigned int reversed = revers_digits(number);
   return (number != reversed) &&
           is_prime(number) &&
           is_prime(reversed);
+#else // ca 10%-15% faster
+  if (!is_prime(number))
+  {
+    return 0;
+  }
+
+  unsigned int reversed = revers_digits(number);
+  return (number != reversed) &&
+          is_prime(reversed);
+
+#endif
 }
