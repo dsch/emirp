@@ -64,49 +64,49 @@ int main()
     {
               CU_ASSERT_FALSE(is_prime(0));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "one is not prime", ({void test()
+  CU_add_test(is_prime_suite, "one is not prime", ({void test()
     {
               CU_ASSERT_FALSE(is_prime(1));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "two is prime", ({void test()
+  CU_add_test(is_prime_suite, "two is prime", ({void test()
     {
               CU_ASSERT_TRUE(is_prime(2));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "three is prime", ({void test()
+  CU_add_test(is_prime_suite, "three is prime", ({void test()
     {
               CU_ASSERT_TRUE(is_prime(3));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "four is not prime", ({void test()
+  CU_add_test(is_prime_suite, "four is not prime", ({void test()
     {
               CU_ASSERT_FALSE(is_prime(4));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "five is prime", ({void test()
+  CU_add_test(is_prime_suite, "five is prime", ({void test()
     {
               CU_ASSERT_TRUE(is_prime(5));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "six is not prime", ({void test()
+  CU_add_test(is_prime_suite, "six is not prime", ({void test()
     {
               CU_ASSERT_FALSE(is_prime(6));
     }
-    test;}));
+              test;}));
 
-    CU_add_test(is_prime_suite, "seven is prime", ({void test()
+  CU_add_test(is_prime_suite, "seven is prime", ({void test()
     {
               CU_ASSERT_TRUE(is_prime(7));
     }
-    test;}));
+              test;}));
 
   CU_pSuite is_emirp_suite = CU_add_suite("is_emirp", NULL, NULL);
 
@@ -114,7 +114,19 @@ int main()
     {
               CU_ASSERT_FALSE(is_emirp(one_digit_number));
     }
-    test;}));
+              test;}));
+
+  CU_add_test(is_emirp_suite, "13 is emirp", ({void test()
+    {
+              CU_ASSERT_TRUE(is_emirp(13));
+    }
+              test;}));
+
+  CU_add_test(is_emirp_suite, "991 is emirp", ({void test()
+    {
+              CU_ASSERT_TRUE(is_emirp(991));
+    }
+              test;}));
 
 
   CU_ErrorCode error_code = CU_basic_run_tests();
