@@ -1,10 +1,10 @@
 #include "emirp.h"
 
-int revers_digits(int number)
+unsigned int revers_digits(unsigned int number)
 {
-  static const int base = 10;
+  static const unsigned int base = 10;
 
-  int reversed = 0;
+  unsigned int reversed = 0;
   while (number > 0)
   {
     reversed *= base;

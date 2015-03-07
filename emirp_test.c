@@ -13,31 +13,31 @@ static const int big_number_reversed = 1;
 
 static void revers_digits_zero()
 {
-  int reversed = revers_digits(0);
+  unsigned int reversed = revers_digits(0);
   CU_ASSERT_EQUAL(reversed, 0);
 }
 
 static void revers_digits_one_digit()
 {
-  int reversed = revers_digits(one_digit_number);
+  unsigned int reversed = revers_digits(one_digit_number);
   CU_ASSERT_EQUAL(reversed, one_digit_number);
 }
 
 static void revers_digits_two_digit()
 {
-  int reversed = revers_digits(two_digit_number);
+  unsigned int reversed = revers_digits(two_digit_number);
   CU_ASSERT_EQUAL(reversed, two_digit_number_reversed);
 }
 
 static void revers_digits_three_digit()
 {
-  int reversed = revers_digits(three_digit_number);
+  unsigned int reversed = revers_digits(three_digit_number);
   CU_ASSERT_EQUAL(reversed, three_digit_number_reversed);
 }
 
 static void revers_digits_big_number()
 {
-  int reversed = revers_digits(big_number);
+  unsigned int reversed = revers_digits(big_number);
   CU_ASSERT_EQUAL(reversed, big_number_reversed);
 }
 

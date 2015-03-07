@@ -1,6 +1,6 @@
 #ifndef EMIRP_H
 #define EMIRP_H
 
-int revers_digits(int number);
+unsigned int revers_digits(unsigned int number);
 
 #endif
