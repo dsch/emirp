@@ -2,11 +2,13 @@
 
 int revers_digits(int number)
 {
-  int reversed = number % 10;
-  number /= 10;
+  static const int base = 10;
+
+  int reversed = number % base;
+  number /= base;
   if (number > 0)
   {
-    reversed *= 10;
+    reversed *= base;
     reversed += number;
   }
   return reversed;
