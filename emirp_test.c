@@ -46,17 +46,25 @@ int main()
   CU_initialize_registry();
   CU_basic_set_mode(CU_BRM_VERBOSE);
 
-  CU_pSuite suite = CU_add_suite("revers digits", NULL, NULL);
-  CU_add_test(suite, "zero reversed should return zero",
+  CU_pSuite reverse_digit_suite = CU_add_suite("revers digits", NULL, NULL);
+  CU_add_test(reverse_digit_suite, "zero reversed should return zero",
               revers_digits_zero);
-  CU_add_test(suite, "single-digit numbers should return the same number",
+  CU_add_test(reverse_digit_suite, "single-digit numbers should return the same number",
               revers_digits_one_digit);
-  CU_add_test(suite, "two-digit numbers should return reversed number",
+  CU_add_test(reverse_digit_suite, "two-digit numbers should return reversed number",
               revers_digits_two_digit);
-  CU_add_test(suite, "three-digit numbers should return reversed number",
+  CU_add_test(reverse_digit_suite, "three-digit numbers should return reversed number",
               revers_digits_three_digit);
-  CU_add_test(suite, "bug numbers should return reversed number",
+  CU_add_test(reverse_digit_suite, "big numbers should return reversed number",
               revers_digits_big_number);
+
+  CU_pSuite is_prime_suite = CU_add_suite("is_prime", NULL, NULL);
+
+  CU_add_test(is_prime_suite, "one is not prime", ({void test()
+    {
+              CU_ASSERT_FALSE(is_prime(1));
+    }
+    test;}));
 
   CU_ErrorCode error_code = CU_basic_run_tests();
   CU_cleanup_registry();

@@ -13,3 +13,8 @@ unsigned int revers_digits(unsigned int number)
   }
   return reversed;
 }
+
+int is_prime(unsigned int number)
+{
+  return number < 2;
+}

@@ -3,4 +3,6 @@
 
 unsigned int revers_digits(unsigned int number);
 
+int is_prime(unsigned int number);
+
 #endif
