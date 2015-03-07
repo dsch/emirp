@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root="../build" name="0">
-      <df name="CMakeFiles">
-        <df name="2.8.12.2">
-          <df name="CompilerIdC">
-            <in>CMakeCCompilerId.c</in>
-          </df>
-          <df name="CompilerIdCXX">
-            <in>CMakeCXXCompilerId.cpp</in>
-          </df>
-        </df>
-      </df>
+    <df root=".." name="1">
+      <in>emirp.c</in>
+      <in>emirp_test.c</in>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -22,7 +14,7 @@
   </logicalFolder>
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
-    <Elem>../build</Elem>
+    <Elem>..</Elem>
   </sourceRootList>
   <projectmakefile>../build/Makefile</projectmakefile>
   <confs>
@@ -32,6 +24,9 @@
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-g"/>
+      </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
       <makefileType>
@@ -39,18 +34,17 @@
           <buildCommandWorkingDir>../build</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath></executablePath>
+          <executablePath>../build/emirp_test</executablePath>
         </makeTool>
       </makefileType>
-      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
-            ex="false"
-            tool="0"
-            flavor2="2">
+      <item path="../emirp.c" ex="false" tool="0" flavor2="2">
       </item>
-      <item path="../build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
-            ex="false"
-            tool="1"
-            flavor2="4">
+      <item path="../emirp_test.c" ex="false" tool="0" flavor2="0">
+        <cTool flags="0">
+          <incDir>
+            <pElem>../build</pElem>
+          </incDir>
+        </cTool>
       </item>
     </conf>
   </confs>
