@@ -19,12 +19,12 @@ int is_prime(unsigned int number)
   unsigned int i;
   for (i = 2; i * i <= number; ++i)
   {
-    if ((number % i) == 0)
+    if ((number % i) == 0U)
     {
       return 0;
     }
   }
-  return number > 1;
+  return number > 1U;
 }
 
 int is_emirp(unsigned int number)
