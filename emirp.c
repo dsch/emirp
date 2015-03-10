@@ -29,5 +29,6 @@ bool is_emirp(N number)
   return (number >= BASE) &&
           ((number % 2U) != 0U) &&
           has_no_odd_factor(number) &&
+          has_no_odd_factor((number % 10) * BASE + (number / 10)) &&
           is_not_palindromic(number);
 }
