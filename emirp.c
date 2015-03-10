@@ -4,7 +4,7 @@
 
 static N revers_digits(N number)
 {
-  unsigned int reversed = 0;
+  N reversed = 0;
   while (number > 0)
   {
     reversed *= BASE;
