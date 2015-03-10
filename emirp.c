@@ -15,11 +15,19 @@ static bool has_no_odd_factor(N number)
   return true;
 }
 
+#define BASE 10U
+
+static bool is_not_palindromic(N number)
+{
+  static const N base2 = BASE * BASE;
+  N max_base = (number < base2) ? BASE : base2;
+  return ((number % BASE) != (number / max_base));
+}
+
 bool is_emirp(N number)
 {
-  static const N base = 10U;
-  return (number >= base) &&
+  return (number >= BASE) &&
           ((number % 2U) != 0U) &&
           has_no_odd_factor(number) &&
-          ((number % base) != (number / base));
+          is_not_palindromic(number);
 }
