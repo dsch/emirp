@@ -15,6 +15,11 @@ static bool has_no_odd_factor(N number)
   return true;
 }
 
+static bool has_no_factor(N number)
+{
+  return ((number % 2U) != 0U) && has_no_odd_factor(number);
+}
+
 #define BASE 10U
 
 static bool is_not_palindromic(N number)
@@ -24,27 +29,27 @@ static bool is_not_palindromic(N number)
   return ((number % BASE) != (number / max_base));
 }
 
-static bool reversed_digit_is_prime(N number)
+static bool reversed_digit_has_no_factors(N number)
 {
+  static const N base2 = BASE * BASE;
   N reversed;
-  if (number < (BASE * BASE))
+  if (number < base2)
   {
     reversed = (number % 10) * BASE + (number / 10);
   }
   else
   {
-    reversed = ((number % 10) * BASE * BASE) +
+    reversed = ((number % 10) * base2) +
             (((number / 10) % 10) * BASE) +
-            (number / (BASE * BASE));
+            (number / base2);
   }
-  return has_no_odd_factor(reversed);
+  return has_no_factor(reversed);
 }
 
 bool is_emirp(N number)
 {
   return (number >= BASE) &&
-          ((number % 2U) != 0U) &&
-          has_no_odd_factor(number) &&
-          reversed_digit_is_prime(number) &&
+          has_no_factor(number) &&
+          reversed_digit_has_no_factors(number) &&
           is_not_palindromic(number);
 }

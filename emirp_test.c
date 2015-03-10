@@ -29,6 +29,7 @@ int main()
   TEST_IS_NOT_A_EMIRP(11);   /* two digits palindromic prime */
   TEST_IS_NOT_A_EMIRP(25);   /* two digits non prime */
   TEST_IS_NOT_A_EMIRP(19);   /* two digits prime */
+  TEST_IS_NOT_A_EMIRP(23);   /* two digits prime */
   TEST_IS_NOT_A_EMIRP(101);  /* three digits non prime */
   TEST_IS_A_EMIRP(107);      /* three digits emirp */
   TEST_IS_NOT_A_EMIRP(1000); /* max value */
