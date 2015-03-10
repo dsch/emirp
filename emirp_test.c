@@ -1,16 +1,31 @@
 #include <CUnit/CUnit.h>
+#include <CUnit/Basic.h>
 
 #include "emirp.h"
 
+#define TEST_IS_A_EMIRP(number) \
+CU_add_test(is_emirp_suite, #number " is a emirp", ({void test() \
+{ \
+  CU_ASSERT_TRUE(is_emirp(number)); \
+} test; }))
+
+#define TEST_IS_NOT_A_EMIRP(number) \
+CU_add_test(is_emirp_suite, #number " is not a emirp", ({void test() \
+{ \
+  CU_ASSERT_FALSE(is_emirp(number)); \
+} test; }))
+
 int main()
 {
-  if (CU_initialize_registry()) 
-  {
-    printf("Initialization of Test Registry failed.\n");
-  }
-  else
-  {
-    CU_basic_run_tests();
-    CU_cleanup_registry();
-  }
+  CU_initialize_registry();
+  CU_basic_set_mode(CU_BRM_VERBOSE);
+
+  CU_pSuite is_emirp_suite = CU_add_suite("is_emirp", NULL, NULL);
+
+  TEST_IS_NOT_A_EMIRP(0);   /* first test */
+
+  CU_ErrorCode error_code = CU_basic_run_tests();
+  CU_cleanup_registry();
+
+  return error_code;
 }
