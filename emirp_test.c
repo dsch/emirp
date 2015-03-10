@@ -26,6 +26,7 @@ int main()
   TEST_IS_A_EMIRP(13);       /* two digits emirp */
   TEST_IS_NOT_A_EMIRP(12);   /* two digits non prime */
   TEST_IS_NOT_A_EMIRP(15);   /* two digits non prime */
+  TEST_IS_NOT_A_EMIRP(11);   /* two digits palindromic prime */
 
   CU_ErrorCode error_code = CU_basic_run_tests();
   CU_cleanup_registry();
