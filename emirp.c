@@ -1,8 +1,9 @@
 #include "emirp.h"
 
 bool is_emirp(N number) {
-  return (number >= 10U) &&
+  static const N base = 10U;
+  return (number >= base) &&
           ((number % 2) != 0) &&
           ((number % 3) != 0) &&
-          ((number % 10U) != (number / 10U));
+          ((number % base) != (number / base));
 }
