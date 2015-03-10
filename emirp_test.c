@@ -1,7 +1,7 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
 
-#include "emirp.h"
+#include "emirp.c"
 
 static const int one_digit_number = 5;
 static const int two_digit_number = 15;

@@ -2,7 +2,7 @@
 
 #define BASE 10U
 
-N revers_digits(N number)
+static N revers_digits(N number)
 {
   unsigned int reversed = 0;
   while (number > 0)
@@ -14,7 +14,7 @@ N revers_digits(N number)
   return reversed;
 }
 
-bool is_prime(N number)
+static bool is_prime(N number)
 {
   N i;
   for (i = 2U; i * i <= number; ++i)
