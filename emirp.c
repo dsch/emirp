@@ -3,19 +3,14 @@
 static bool has_no_odd_factor(N number)
 {
   N odd_factor = 3U;
-  do
+  while (((number % odd_factor) != 0U) && ((odd_factor * odd_factor) <= number))
   {
-    if ((number % odd_factor) == 0U)
-    {
-      return false;
-    }
     odd_factor += 2U;
   }
-  while ((odd_factor * odd_factor) <= number);
-  return true;
+  return (odd_factor * odd_factor) > number;
 }
 
-static bool has_no_factor(N number)
+static bool has_no_factors(N number)
 {
   return ((number % 2U) != 0U) && has_no_odd_factor(number);
 }
@@ -43,13 +38,12 @@ static bool reversed_digit_has_no_factors(N number)
             (((number / 10) % 10) * BASE) +
             (number / base2);
   }
-  return has_no_factor(reversed);
+  return has_no_factors(reversed);
 }
 
 bool is_emirp(N number)
 {
-  return (number >= BASE) &&
-          has_no_factor(number) &&
+  return has_no_factors(number) &&
           reversed_digit_has_no_factors(number) &&
           is_not_palindromic(number);
 }
