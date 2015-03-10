@@ -23,6 +23,7 @@ int main()
   CU_pSuite is_emirp_suite = CU_add_suite("is_emirp", NULL, NULL);
 
   TEST_IS_NOT_A_EMIRP(5);    /* single digit prime */
+  TEST_IS_A_EMIRP(13);       /* two digits emirp */
 
   CU_ErrorCode error_code = CU_basic_run_tests();
   CU_cleanup_registry();

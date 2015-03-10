@@ -2,6 +2,5 @@
 
 bool is_emirp(N number)
 {
-  ++number;
-  return false;
+  return number >= 10U;
 }
