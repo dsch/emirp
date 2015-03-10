@@ -19,7 +19,7 @@ static bool has_no_factors(N number)
 #define BASE 10U
 #define BASE2 (BASE * BASE)
 
-static bool reversed_digit_has_no_factors_and_is_not_palindromic(N number)
+static bool reversed_digit_is_not_palindromic_and_has_no_factors(N number)
 {
   N last_digit = number % BASE;
   N first_digit;
@@ -43,5 +43,5 @@ static bool reversed_digit_has_no_factors_and_is_not_palindromic(N number)
 bool is_emirp(N number)
 {
   return has_no_factors(number) &&
-          reversed_digit_has_no_factors_and_is_not_palindromic(number);
+          reversed_digit_is_not_palindromic_and_has_no_factors(number);
 }

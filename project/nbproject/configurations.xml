@@ -26,7 +26,7 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <flagsDictionary>
-        <element flagsID="0" commonFlags="-O3"/>
+        <element flagsID="0" commonFlags="-g -ansi"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -40,9 +40,6 @@
             <incDir>
               <pElem>../build</pElem>
             </incDir>
-            <preprocessorList>
-              <Elem>NDEBUG</Elem>
-            </preprocessorList>
           </cTool>
         </makeTool>
       </makefileType>
