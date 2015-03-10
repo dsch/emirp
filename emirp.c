@@ -26,17 +26,18 @@ static bool is_not_palindromic(N number)
 
 static bool reversed_digit_is_prime(N number)
 {
+  N reversed;
   if (number < (BASE * BASE))
   {
-    return has_no_odd_factor((number % 10) * BASE + (number / 10));
+    reversed = (number % 10) * BASE + (number / 10);
   }
   else
   {
-    N reversed = ((number % 10) * BASE * BASE) +
+    reversed = ((number % 10) * BASE * BASE) +
             (((number / 10) % 10) * BASE) +
             (number / (BASE * BASE));
-    return has_no_odd_factor(reversed);
   }
+  return has_no_odd_factor(reversed);
 }
 
 bool is_emirp(N number)
