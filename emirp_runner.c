@@ -9,7 +9,7 @@ static void output(N number)
 int main()
 {
   unsigned i;
-  for (i=0; i<1; ++i)
+  for (i=0; i<100000; ++i)
   {
     unsigned number = 0;
     for (number = 0; number <= 1000; ++number)
