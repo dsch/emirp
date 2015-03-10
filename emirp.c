@@ -1,44 +1,36 @@
 #include "emirp.h"
 
-unsigned int revers_digits(unsigned int number)
-{
-  static const unsigned int base = 10;
+#define BASE 10U
 
+N revers_digits(N number)
+{
   unsigned int reversed = 0;
   while (number > 0)
   {
-    reversed *= base;
-    reversed += number % base;
-    number /= base;
+    reversed *= BASE;
+    reversed += number % BASE;
+    number /= BASE;
   }
   return reversed;
 }
 
-int is_prime(unsigned int number)
+bool is_prime(N number)
 {
-  unsigned int i;
-  for (i = 2; i * i <= number; ++i)
+  N i;
+  for (i = 2U; i * i <= number; ++i)
   {
     if ((number % i) == 0U)
     {
-      return 0;
+      return false;
     }
   }
   return number > 1U;
 }
 
-int is_emirp(unsigned int number)
+bool is_emirp(N number)
 {
-#if 1
-  unsigned int reversed = revers_digits(number);
+  N reversed = revers_digits(number);
   return (number != reversed) &&
           is_prime(number) &&
           is_prime(reversed);
-#else // ca 10%-15% faster
-  unsigned int reversed;
-  return is_prime(number) &&
-          (number != (reversed = revers_digits(number))) &&
-          is_prime(reversed);
-
-#endif
 }

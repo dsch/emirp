@@ -1,10 +1,14 @@
 #ifndef EMIRP_H
 #define EMIRP_H
 
-unsigned int revers_digits(unsigned int number);
+#include <stdbool.h>
 
-int is_prime(unsigned int number);
+typedef unsigned int N;
 
-int is_emirp(unsigned int number);
+N revers_digits(N number);
+
+bool is_prime(N number);
+
+bool is_emirp(N number);
 
 #endif

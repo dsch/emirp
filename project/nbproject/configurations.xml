@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="94">
+<configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root=".." name="1">
+    <df root=".." name="0">
       <in>emirp.c</in>
       <in>emirp_runner.c</in>
       <in>emirp_test.c</in>
@@ -26,7 +26,7 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <flagsDictionary>
-        <element flagsID="0" commonFlags="-g"/>
+        <element flagsID="0" commonFlags="-O3"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -40,6 +40,9 @@
             <incDir>
               <pElem>../build</pElem>
             </incDir>
+            <preprocessorList>
+              <Elem>NDEBUG</Elem>
+            </preprocessorList>
           </cTool>
         </makeTool>
       </makefileType>
@@ -47,7 +50,7 @@
         <cTool flags="0">
         </cTool>
       </item>
-      <item path="../emirp_runner.c" ex="false" tool="0" flavor2="0">
+      <item path="../emirp_runner.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
         </cTool>
       </item>
