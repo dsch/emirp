@@ -10,7 +10,8 @@ static bool has_no_odd_factor(N number)
       return false;
     }
     odd_factor += 2U;
-  } while ((odd_factor * odd_factor) <= number);
+  }
+  while ((odd_factor * odd_factor) <= number);
   return true;
 }
 
