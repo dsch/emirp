@@ -17,7 +17,7 @@ static N revers_digits(N number)
 static bool is_prime(N number)
 {
   N i;
-  for (i = 2U; i * i <= number; ++i)
+  for (i = 2U; (i * i) <= number; ++i)
   {
     if ((number % i) == 0U)
     {
