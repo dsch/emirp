@@ -2,5 +2,6 @@
 
 bool is_emirp(N number)
 {
-  return number != number;
+  ++number;
+  return false;
 }
