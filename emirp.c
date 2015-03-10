@@ -24,11 +24,26 @@ static bool is_not_palindromic(N number)
   return ((number % BASE) != (number / max_base));
 }
 
+static bool reversed_digit_is_prime(N number)
+{
+  if (number < (BASE * BASE))
+  {
+    return has_no_odd_factor((number % 10) * BASE + (number / 10));
+  }
+  else
+  {
+    N reversed = ((number % 10) * BASE * BASE) +
+            (((number / 10) % 10) * BASE) +
+            (number / (BASE * BASE));
+    return has_no_odd_factor(reversed);
+  }
+}
+
 bool is_emirp(N number)
 {
   return (number >= BASE) &&
           ((number % 2U) != 0U) &&
           has_no_odd_factor(number) &&
-          has_no_odd_factor((number % 10) * BASE + (number / 10)) &&
+          reversed_digit_is_prime(number) &&
           is_not_palindromic(number);
 }
