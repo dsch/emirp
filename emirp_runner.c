@@ -3,12 +3,16 @@
 
 int main()
 {
-  N number = 0;
-  for (number = 0; number <= 1000; ++number)
+  size_t i;
+  for (i = 0; i<100000; ++i)
   {
-    if (is_emirp(number))
+    N number = 0;
+    for (number = 0; number <= 1000; ++number)
     {
-      printf("%d is emirp\n", number);
+      if (is_emirp(number))
+      {
+        printf("%d is emirp\n", number);
+      }
     }
   }
   return 0;
