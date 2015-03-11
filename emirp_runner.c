@@ -8,12 +8,16 @@ static void output(N number)
 
 int main()
 {
-  N number;
-  for (number = 0; number <= 1000; ++number)
+  size_t i;
+  for (i = 0; i < 100000; ++i)
   {
-    if (is_emirp(number))
+    N number;
+    for (number = 0; number <= 1000; ++number)
     {
-      output(number);
+      if (is_emirp(number))
+      {
+        output(number);
+      }
     }
   }
   return 0;
